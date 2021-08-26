@@ -5,7 +5,7 @@ import tv.codealong.tutorials.springboot.thenewboston.datasource.BankDataSource
 import tv.codealong.tutorials.springboot.thenewboston.model.Bank
 import java.lang.IllegalArgumentException
 
-@Repository
+@Repository("mock")
 class MockBankDataSource : BankDataSource{
 
     val banks = mutableListOf(
