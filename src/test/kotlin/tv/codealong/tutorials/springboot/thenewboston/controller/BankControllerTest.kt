@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.MediaType
+import org.springframework.test.annotation.DirtiesContext
 import org.springframework.test.web.servlet.*
 import tv.codealong.tutorials.springboot.thenewboston.model.Bank
 
@@ -193,6 +194,7 @@ internal class BankControllerTest @Autowired constructor(
     inner class DeleteExistingBank {
 
         @Test
+        @DirtiesContext // used to indicate that the test changes the state of the data and therefore affects the other test cases. Re-initializes the entire Spring app
         fun `should delete the bank with the given bank number`() {
             // given
             val accountNumber = 1234
